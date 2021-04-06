@@ -10,6 +10,7 @@
 
     returns: a boolean indicating whether the value was found or not.
 */
+
 inline bool ContainsLinear(int* arr, size_t size, int n)
 {
     for (int i = 0; i < size; i++) 

@@ -9,3 +9,6 @@ Each file includes an implementation, and a driver program to run a test.
 
 # Sorting
  - Bubble Sort
+
+# Structures
+ - Linked List
