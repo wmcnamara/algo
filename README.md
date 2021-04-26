@@ -1,7 +1,7 @@
-# Algorithms
-A collection of algorithms implemented in C++. Intended as a learning project.
+# Algo
+A collection of algorithms and data structures I implemented in C++.
 
-Each file includes an implementation, and a driver program to run a test.
+Each file includes an implementation, and a program to run a test.
 
 # Searching
  - Binary Search
