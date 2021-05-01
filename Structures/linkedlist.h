@@ -1,44 +1,100 @@
-#include <memory>
 #include <iostream>
 
-struct Node 
+class Node
 {
 public:
-	Node(int data, std::unique_ptr<Node> ptr) : mData(data), next(std::move(ptr)) {}
-	int mData = 0;
-	std::unique_ptr<Node> next = nullptr;
+    int data = 0;
+    Node* next = nullptr;
+
+    Node(int data)
+    {
+        this->data = data;
+        next = nullptr;
+    }
+
+    friend class LinkedList;
 };
 
-class LinkedList 
-{	
+class LinkedList
+{
 public:
-	LinkedList(int data) : head(std::make_unique<Node>(data, nullptr)) {}
+    LinkedList() = default;
+    ~LinkedList()
+    {
+        Node* tmp = head;
+        while (tmp->next != nullptr)
+        {
+            Node* delTmp = tmp;
+            tmp = tmp->next;
 
-	inline void Add(int data) 
-	{
-		Node* current = head.get();
+            delete delTmp;
+        }
 
-		while (current->next != nullptr) 
-		{
-			current = current->next.get();
-		}
-				
-		current->next = std::make_unique<Node>(data, nullptr);
-	}
+        delete tmp;
+    }
 
-	inline void Print() 
-	{
-		Node* current = head.get();
+    Node* AddNode(int data)
+    {
+        //Default add node.
+        if (head == nullptr)
+        {
+            head = new Node(data);
+            return nullptr;
+        }
 
-		while (current->next != nullptr)
-		{
-			std::cout << current->mData << "\n";
-			current = current->next.get();
-		}
+        Node* tmp = head;
+        while (tmp->next != nullptr)
+        {
+            tmp = tmp->next;
+        }
 
-		std::cout << current->mData << "\n";
-	}
+        tmp->next = new Node(data);
+        return tmp->next;
+    }
+
+    void RemoveNode(Node* node)
+    {
+        if (head == nullptr)
+            return;
+
+        Node* tmp = head;
+
+        while (tmp->next != node)
+        {
+            tmp = tmp->next;
+        }
+
+        tmp->next = node->next;
+        delete node;
+    }
+
+    void Print()
+    {
+        Node* tmp = head;
+
+        while (tmp->next != nullptr)
+        {
+            std::cout << tmp->data << "\n";
+            tmp = tmp->next;
+        }
+
+        std::cout << tmp->data << "\n";
+    }
 
 private:
-	std::unique_ptr<Node> head = nullptr;
+    Node* head = nullptr;
 };
+
+int main()
+{
+    LinkedList list;
+    list.AddNode(10);
+    list.AddNode(20);
+    Node* node = list.AddNode(30);
+    list.AddNode(40);
+
+    list.Print();
+
+    list.RemoveNode(node);
+    list.Print();
+}
