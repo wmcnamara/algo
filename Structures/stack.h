@@ -1,5 +1,17 @@
 #include <iostream>
 
+/*
+    Created by: Weston McNamara in 2021
+
+    This class is a basic implementation of the stack data structure.
+
+    It dynamically allocates memory and properly disposes of it without issue.
+
+    Functions:
+    Push() //pushes element to the end of the stack
+    RemoveNode() //pushes element off the top of the stack
+*/
+
 class Stack
 {
 public:

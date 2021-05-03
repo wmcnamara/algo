@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+//Weston McNamara 2021
 //Returns true if the sorted array "arr" contains element n. Performs a binary search.
 // O(log N)
 /*
@@ -11,6 +12,7 @@
 
     returns: a boolean indicating whether the value was found  
 */
+
 inline bool ContainsBinarySearch(int* arr, int left, int right, int n) 
 {
     if (left <= right)

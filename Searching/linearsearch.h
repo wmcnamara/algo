@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+//Weston McNamara 2021
 //Returns true if the sorted array "arr" contains element n. Performs a linear search.
 // O(N)
 /*

@@ -1,3 +1,4 @@
+// Weston McNamara 2021
 //Sorts an array with the quick sort algorithm
 /*
     arr: Array to be sorted

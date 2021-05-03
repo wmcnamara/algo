@@ -1,12 +1,16 @@
 #pragma once
 #include <iostream>
 
+//Created by Weston McNamara in 2020
 //Returns true if the sorted array "arr" contains element n. 
 //Binary search.
 
 /*
     arr: Array to be sorted
     len: Length of the array.
+
+    Time complexity:
+    O(n^2)
 */
 
 int* BubbleSort(int* arr, size_t len)
@@ -16,7 +20,8 @@ int* BubbleSort(int* arr, size_t len)
         for (int j = 0; j < len; j++)
         {
             if (arr[j] > arr[i])
-            {
+            {            
+                //Swap
                 int tmp = arr[i];
 
                 arr[i] = arr[j];
@@ -30,8 +35,6 @@ int* BubbleSort(int* arr, size_t len)
 
 int main()
 {
-    std::cout << "Hello World!\n";
-
     int arr[10] = { 2, 5, 1, 0, 2 };
     BubbleSort(arr, 5);
 

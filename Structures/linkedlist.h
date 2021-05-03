@@ -1,5 +1,18 @@
 #include <iostream>
 
+/*
+    Created by: Weston McNamara in 2021
+
+    This class is a basic implementation of the linked list data structure.
+
+    It dynamically allocates memory and properly disposes of it without issue.
+
+    Functions:
+    AddNode() //adds node to the end of the linked list
+    RemoveNode() //removes a node from anywhere in the list
+    Print() //logs the linked list data to std::cout
+*/
+
 class Node
 {
 public:
