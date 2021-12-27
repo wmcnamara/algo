@@ -14,3 +14,8 @@ Each file includes an implementation, and a program to run a test.
 # Structures
  - Linked List
  - Stack
+ - Binary Search Tree
+ - Hashmap
+
+# Challenges
+ - Canadian Computing Competition Senior Problem 2
