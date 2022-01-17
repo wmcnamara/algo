@@ -23,7 +23,9 @@ Each file includes an implementation, and a program to run a test.
 ## Codewars
  - Bit Counting
  - Sum of Intervals
+ - Gap in Primes
 
 ## Project Euler
  - Problem 1
  - Problem 2
+ - Problem 3
