@@ -1,3 +1,9 @@
+/*
+    C++ binary search tree implementation, created by Weston McNamara.
+
+    It features Inserting, and Searching, and uses a recursive approach for each problem.
+*/
+
 #include <iostream>
 
 struct Node
