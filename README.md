@@ -26,3 +26,4 @@ Each file includes an implementation, and a program to run a test.
 
 ## Project Euler
  - Problem 1
+ - Problem 2
