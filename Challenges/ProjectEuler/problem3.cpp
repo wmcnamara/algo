@@ -1,4 +1,4 @@
-//Problem 2 https://projecteuler.net/problem=3
+//Problem 3 https://projecteuler.net/problem=3
 
 #include <iostream>
 #include <cmath>
