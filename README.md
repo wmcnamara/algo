@@ -3,29 +3,33 @@ A collection of algorithms and data structures I implemented in C++.
 
 Each file includes an implementation, and a program to run a test.
 
-# Searching
+## Searching
  - Binary Search
  - Linear Search
 
-# Sorting
+## Sorting
  - Bubble Sort
  - Quick Sort
 
-# Structures
+## Structures
  - Linked List
  - Stack
  - Binary Search Tree
  - Hashmap
 
-# Challenges
+## Challenges
  - Canadian Computing Competition Senior Problem 2
 
 ## Codewars
  - Bit Counting
  - Sum of Intervals
  - Gap in Primes
+ - Wait Without Blocking
 
 ## Project Euler
  - Problem 1
  - Problem 2
  - Problem 3
+ - Problem 4
+ - Problem 5
+ - Problem 6
