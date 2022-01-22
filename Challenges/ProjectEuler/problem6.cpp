@@ -8,7 +8,7 @@ int main()
 	unsigned long long sumOfSquares = 0;
 	unsigned long long squareOfSums = 0;
 
-	for (int i = 1; i <= 100; i++)
+	for (unsigned long long i = 1; i <= 100; i++)
 	{
 		sumOfSquares += i * i;
 		squareOfSums += i;
