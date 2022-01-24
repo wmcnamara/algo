@@ -17,6 +17,12 @@ Each file includes an implementation, and a program to run a test.
  - Binary Search Tree
  - Hashmap
 
+### Graph Algorithms
+Contained in graph.h
+ - Depth First Search
+ - Breadth First Search
+ - Directed Acyclic/Cyclic implementations
+
 ## Challenges
  - Canadian Computing Competition Senior Problem 2
 
