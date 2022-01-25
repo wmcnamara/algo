@@ -14,42 +14,93 @@ struct GraphNode
 };
 
 bool operator<(const GraphNode& first, const GraphNode& second) { return first.data < second.data; }
+bool operator==(const GraphNode& first, const GraphNode& second) { return first.data == second.data; }
 
 using DirectedGraph = std::map<GraphNode, std::vector<GraphNode>>;
 
-void BreadthFirstSearch(DirectedGraph& g)
+/*
+	Breadth first print
+
+	Where n is the number of nodes and m is the number of edges, the time complexity is:
+	O(n + m)
+
+*/
+void BreadthFirstPrint(DirectedGraph& g)
 {
-	std::set<GraphNode> visited;
 	std::queue<GraphNode> bfsQueue;
 
 
-}
+	bfsQueue.push(g.begin()->first);
 
-void DepthFirstSearch(DirectedGraph& g)
-{
-	std::set<GraphNode> visited;
-	std::stack<GraphNode> stack;
-
-	stack.push(g.begin()->first);
-
-	while (stack.size() > 0)
+	while (bfsQueue.size() > 0)
 	{
-		GraphNode current = stack.top();
-		stack.pop();
+		GraphNode current = bfsQueue.front();
+		bfsQueue.pop();
+
 		std::cout << current.data << "\n";
 
 		for (const auto& neighor : g.at(current))
 		{
-			stack.push(neighor);
+			bfsQueue.push(neighor);
 		}
 
 	}
 }
 
-void DFSRecursive(DirectedGraph g)
-{
+/*
+	Recursive depth first print
 
+	Where n is the number of nodes and m is the number of edges, the time complexity is:
+	O(n + m)
+
+*/
+void DepthFirstPrint(const DirectedGraph& g, const GraphNode& starter)
+{
+	std::cout << starter.data << '\n';
+
+	for (const GraphNode neighbor : g.at(starter))
+	{
+		DepthFirstPrint(g, neighbor);
+	}
 }
+
+bool HasPathBFS(const DirectedGraph& g, const GraphNode& node)
+{
+	std::queue<GraphNode> bfsQueue;
+
+	bfsQueue.push(g.begin()->first);
+
+	while (bfsQueue.size() > 0)
+	{
+		GraphNode current = bfsQueue.front();
+		bfsQueue.pop();
+
+		if (current == node)
+			return true;
+
+		for (const auto& neighor : g.at(current))
+		{
+			bfsQueue.push(neighor);
+		}
+	}
+
+	return false;
+}
+
+bool HasPathDFS(const DirectedGraph& g, const GraphNode& current, const GraphNode& nodeToFind)
+{
+	if (current == nodeToFind)
+		return true;
+
+	for (const GraphNode& neighbor : g.at(current))
+	{
+		if (HasPathDFS(g, neighbor, nodeToFind))
+			return true;
+	}
+
+	return false;
+}
+
 int main()
 {
 	GraphNode a{ 1 };
@@ -69,5 +120,5 @@ int main()
 		{ f, {  } }
 		});
 
-	DepthFirstSearch(graph);
+	DepthFirstPrint(graph, graph.begin()->first);
 }
