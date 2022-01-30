@@ -1,5 +1,5 @@
 //Weston McNamara
-//Problem 8 https://projecteuler.net/problem=8
+//Problem 9 https://projecteuler.net/problem=9
 
 #include <iostream>
 #include <cmath>
