@@ -1,12 +1,11 @@
-//Weston McNamara
-//Problem 6 https://projecteuler.net/problem=6
 
 #include <iostream>
 #include <map>
 #include <vector>
+#include <utility>
 #include <stack>
 #include <queue>
-#include <set>
+#include <unordered_set>
 
 struct GraphNode
 {
@@ -17,18 +16,20 @@ bool operator<(const GraphNode& first, const GraphNode& second) { return first.d
 bool operator==(const GraphNode& first, const GraphNode& second) { return first.data == second.data; }
 
 using DirectedGraph = std::map<GraphNode, std::vector<GraphNode>>;
+using UndirectedGraph = std::map<GraphNode, std::vector<GraphNode>>;
+using EdgeList = std::vector<std::pair<GraphNode, GraphNode>>;
 
 /*
 	Breadth first print
 
-	Where n is the number of nodes and m is the number of edges, the time complexity is:
-	O(n + m)
+	Where e is the number of edges, the time complexity is:
+	O(e)
 
 */
 void BreadthFirstPrint(DirectedGraph& g)
 {
 	std::queue<GraphNode> bfsQueue;
-
+	std::unordered_set<GraphNode> visited;
 
 	bfsQueue.push(g.begin()->first);
 
@@ -37,7 +38,17 @@ void BreadthFirstPrint(DirectedGraph& g)
 		GraphNode current = bfsQueue.front();
 		bfsQueue.pop();
 
+		if (visited.contains(current))
+		{
+			continue;
+		}
+		else
+		{
+			visited.insert(current);
+		}
+
 		std::cout << current.data << "\n";
+
 
 		for (const auto& neighor : g.at(current))
 		{
@@ -47,11 +58,16 @@ void BreadthFirstPrint(DirectedGraph& g)
 	}
 }
 
+UndirectedGraph CreateGraphFromEdgeList(EdgeList list)
+{
+}
+
+
 /*
 	Recursive depth first print
 
-	Where n is the number of nodes and m is the number of edges, the time complexity is:
-	O(n + m)
+	Where e is the number of edges, the time complexity is:
+	O(e)
 
 */
 void DepthFirstPrint(const DirectedGraph& g, const GraphNode& starter)
