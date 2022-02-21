@@ -32,6 +32,13 @@ Contained in graph.h
  - Gap in Primes
  - Wait Without Blocking
 
+## Leetcode
+ - Majority Element 2
+ - Duplicate Zeros
+ - Contains Duplicate 2
+ - Majority Element
+ - Find All Lonely Numbers in the Array
+
 ## Project Euler
  - Problem 1
  - Problem 2
