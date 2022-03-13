@@ -10,6 +10,7 @@ Each file includes an implementation, and a program to run a test.
 ## Sorting
  - Bubble Sort
  - Quick Sort
+ - Counting Sort
 
 ## Structures
  - Linked List
