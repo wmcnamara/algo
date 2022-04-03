@@ -42,7 +42,13 @@ public:
 
         return dataptr[currentCount--];
     }
-
+    
+    Stack(const Stack& other) = delete;
+    Stack& operator=(const Stack& other) = delete;
+    
+    Stack(Stack&& other) = delete;
+    Stack& operator=(Stack&& other) = delete;
+    
 private:
     int currentCount = 0;
     int maxCount = 0;
